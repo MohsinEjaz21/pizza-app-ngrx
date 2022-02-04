@@ -76,18 +76,18 @@ further about to dive deeper or understand in more detail what they are:
 * [Webpack](https://webpack.js.org/)
 
 
-…or create a new repository on the command line
-> echo "# pizza-app-ngrx" >> README.md
-> git init
-> git add README.md
-> git commit -m "first commit"
-> git branch -M main
-> git remote add origin https://github.com/MohsinEjaz21/pizza-app-ngrx.git
-> git push -u origin main
+…or create a new repository on the command line<br/>
+> echo "# pizza-app-ngrx" >> README.md <br/>
+> git init<br/>
+> git add README.md<br/>
+> git commit -m "first commit"<br/>
+> git branch -M main<br/>
+> git remote add origin https://github.com/MohsinEjaz21/pizza-app-ngrx.git<br/>
+> git push -u origin main<br/>
 
 
 
-…or push an existing repository from the command line
->git remote add origin https://github.com/MohsinEjaz21/pizza-app-ngrx.git
->git branch -M main
->git push -u origin main
+…or push an existing repository from the command line<br/>
+>git remote add origin https://github.com/MohsinEjaz21/pizza-app-ngrx.git<br/>
+>git branch -M main<br/>
+>git push -u origin main<br/>
