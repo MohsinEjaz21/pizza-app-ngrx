@@ -78,7 +78,6 @@ further about to dive deeper or understand in more detail what they are:
 
 <!-- IGNORE IT -->
 
-…or create a new repository on the command line<br/>
 > echo "# pizza-app-ngrx" >> README.md <br/>
 > git init<br/>
 > git add README.md<br/>
@@ -88,8 +87,6 @@ further about to dive deeper or understand in more detail what they are:
 > git push -u origin main<br/>
 
 
-
-…or push an existing repository from the command line<br/>
 >git remote add origin https://github.com/MohsinEjaz21/pizza-app-ngrx.git<br/>
 >git branch -M main<br/>
 >git push -u origin main<br/>
