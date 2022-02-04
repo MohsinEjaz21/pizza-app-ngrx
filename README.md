@@ -4,9 +4,6 @@ NGRX: Store + Effects app
 </h1>
 <h4 align="center">Project seed app for our NGRX application using Angular, NGRX Store, Effects, Router Store.</h4>
 
-> This repo serves as the seed project for the Ultimate Angular NGRX Store +
-> Effects course as well as the final solution in stepped branches, come and
-> [learn NGRX](https://ultimatecourses.com/learn/ngrx-store-effects) with us!
 
 [Setup and install](#setup-and-install) | [Tasks](#tasks) |
 [Resources](#resources)
