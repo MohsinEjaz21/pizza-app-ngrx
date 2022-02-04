@@ -76,6 +76,8 @@ further about to dive deeper or understand in more detail what they are:
 * [Webpack](https://webpack.js.org/)
 
 
+<!-- IGNORE IT -->
+
 …or create a new repository on the command line<br/>
 > echo "# pizza-app-ngrx" >> README.md <br/>
 > git init<br/>
