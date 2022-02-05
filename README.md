@@ -90,3 +90,7 @@ further about to dive deeper or understand in more detail what they are:
 >git remote add origin https://github.com/MohsinEjaz21/pizza-app-ngrx.git<br/>
 >git branch -M main<br/>
 >git push -u origin main<br/>
+
+>git add .
+>git commit -m "first commit"
+>git push -u origin main
