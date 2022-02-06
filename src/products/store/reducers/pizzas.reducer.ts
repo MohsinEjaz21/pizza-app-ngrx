@@ -1,11 +1,6 @@
-import { Pizza } from './../../models/pizza.model';
-import * as fromPizza from './../actions/pizzas.action';
-
-export interface PizzaState {
-  entities: { [id: number]: Pizza },
-  loaded: boolean,
-  loading: boolean
-}
+import { Pizza } from '@products/models/pizza.model';
+import * as fromPizza from '@products/store/actions/pizzas.action';
+import { PizzaState } from '../interfaces';
 
 export const initialState: PizzaState = {
   entities: {},
@@ -23,10 +18,12 @@ export function reducer(state = initialState, action: any): PizzaState {
     }
 
     case fromPizza.LOAD_PIZZAS_SUCCESS: {
-      console.log("LOAD_PIZZAS_SUCCESS", action.payload);
-      const pizzas = action.payload;  // [{id: 1, name: "Pizza1"}, {id: 2, name: "Pizza2"}]
+      const pizzas = action.payload;
       const entities = pizzas.reduce((entities: { [id: number]: Pizza }, pizza: Pizza) => {
-        return { ...entities, [pizza.id]: pizza }
+        return {
+          ...entities,
+          [pizza.id]: pizza
+        }
       }, { ...state.entities })
       return { ...state, entities, loading: false, loaded: true }
     }

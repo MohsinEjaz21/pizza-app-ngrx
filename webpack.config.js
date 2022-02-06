@@ -94,7 +94,7 @@ module.exports = {
     },
     publicPath: '/build/',
     port: 3000,
-    setup: function(app) {
+    setup: function (app) {
       app.use('/api', jsonServer.router('db.json'));
     },
   },
@@ -121,6 +121,12 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     modules: ['src', 'node_modules'],
+    alias: {
+      '@app': path.resolve(__dirname, 'src/app'),
+      '@products': path.resolve(__dirname, 'src/products'),
+    },
   },
   plugins,
 };
+
+

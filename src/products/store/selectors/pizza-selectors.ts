@@ -1,8 +1,11 @@
+import * as fromRoot from '@app/store';
 import { createSelector } from "@ngrx/store";
-import { Pizza } from "src/products/models/pizza.model";
-import { getProductsState, ProductsState } from "..";
-import * as fromRoot from '../../../app/store';
-import { PizzaState } from "../reducers/pizzas.reducer";
+import { Pizza } from "@products/models/pizza.model";
+import { PizzaState, ProductsState } from "../interfaces";
+import { getProductsState } from '../reducers';
+
+// module "/Users/ibmislamabad/Desktop/Vscode/Angular/UltimateCourse/ngrx-store-effects-app/src/app/store/index"
+
 
 // inside products we have selector "pizzas"
 export const getPizzasState = createSelector(getProductsState, (state: ProductsState) => state.pizzas)
@@ -16,7 +19,6 @@ export const getSelectedPizza = createSelector(
   (entities, router): Pizza => {
     return router.state && entities[router.state.params.pizzaId]
   }
-
 )
 
 //  inside pizzas we have selector "loading"

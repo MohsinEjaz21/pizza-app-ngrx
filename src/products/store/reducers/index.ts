@@ -1,12 +1,9 @@
-import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
-import * as fromPizzas from './pizzas.reducer';
-
-export interface ProductsState {
-  pizzas: fromPizzas.PizzaState
-}
+import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
+import { ProductsState } from '../interfaces';
+import * as fromPizzasReducer from '../reducers/pizzas.reducer';
 
 export const reducers: ActionReducerMap<ProductsState> = {
-  pizzas: fromPizzas.reducer
+  pizzas: fromPizzasReducer.reducer
 }
 
 // in products.module.ts have feature selector  "products" ... see the snippet above

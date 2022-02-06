@@ -6,12 +6,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 // components
-import * as fromComponents from './components';
+import * as fromComponents from '@products/components';
 // containers
-import * as fromContainers from './containers';
+import * as fromContainers from '@products/containers';
 // services
-import * as fromServices from './services';
-import * as fromStore from './store';
+import * as fromServices from '@products/services';
+import * as fromStore from '@products/store';
 
 
 

@@ -2,18 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from '@app/containers/app/app.component';
+import * as fromRouterStore from '@app/store';
+import { CustomSerializer } from '@app/store';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { MetaReducer, StoreModule } from '@ngrx/store';
-// not used in production
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
-// bootstrap
-import { AppComponent } from './containers/app/app.component';
-import * as fromRouterStore from './store';
-import { CustomSerializer } from './store';
-
-
 
 // this would be done dynamically with webpack for builds
 const environment = {
