@@ -1,3 +1,4 @@
+import { LoadToppings } from './../../store/actions/toppings.action';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Pizza } from '@products/models/pizza.model';
@@ -38,6 +39,7 @@ export class ProductItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.store.dispatch(new fromStore.LoadToppings)
     this.pizza$ = this.store.select(fromStore.getSelectedPizza)
   }
 

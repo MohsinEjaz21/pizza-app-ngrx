@@ -1,11 +1,9 @@
-import { Pizza } from "@products/models/pizza.model";
+import { PizzaState } from './pizzas.interface';
+import { ToppingState } from './toppings.interface';
 
-export interface PizzaState {
-  entities: { [id: number]: Pizza },
-  loaded: boolean,
-  loading: boolean
-}
+export * from './pizzas.interface';
 
 export interface ProductsState {
-  pizzas: PizzaState
+  pizzas: PizzaState,
+  toppings: ToppingState
 }

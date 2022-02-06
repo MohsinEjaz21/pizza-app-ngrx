@@ -25,7 +25,12 @@ export function reducer(state = initialState, action: any): PizzaState {
           [pizza.id]: pizza
         }
       }, { ...state.entities })
-      return { ...state, entities, loading: false, loaded: true }
+      return {
+        ...state,
+        entities,
+        loading: false,
+        loaded: true
+      }
     }
 
     case fromPizza.LOAD_PIZZAS_FAIL: {
