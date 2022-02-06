@@ -4,7 +4,7 @@
     "genDir": "./ngfactory"
   },
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@products/*": [
         "src/products/*"
