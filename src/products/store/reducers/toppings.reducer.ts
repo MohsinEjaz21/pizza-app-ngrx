@@ -5,22 +5,24 @@ import { ToppingState } from '../interfaces/toppings.interface';
 export const initialState: ToppingState = {
   entities: {},
   loaded: false,
-  loading: false
+  loading: false,
+  selectedToppings: []
 };
 
 
 export function reducer(state = initialState, action: fromToppings.ToppingsAction): ToppingState {
   switch (action.type) {
+    
     case fromToppings.LOAD_TOPPINGS: {
       return {
         ...state,
         loading: true,
-        loaded: false
+        loaded: false,
       }
     }
+
     case fromToppings.LOAD_TOPPINGS_SUCCESS: {
       const toppings = action.payload
-
       const entities = toppings.reduce((entities: { [id: number]: Topping }, topping: Topping) => {
         return {
           ...entities,
@@ -35,6 +37,7 @@ export function reducer(state = initialState, action: fromToppings.ToppingsActio
         entities
       }
     }
+
     case fromToppings.LOAD_TOPPINGS_FAIL: {
       return {
         ...state,
@@ -42,6 +45,19 @@ export function reducer(state = initialState, action: fromToppings.ToppingsActio
         loading: false
       }
     }
-  }
 
+    case fromToppings.VISUALISE_TOPPINGS: {
+      const selectedToppings = action.payload
+      return {
+        ...state,
+        selectedToppings
+      }
+    }
+
+    default: {
+      return {
+        ...state
+      }
+    }
+  }
 }

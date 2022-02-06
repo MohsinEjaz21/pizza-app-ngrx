@@ -124,6 +124,7 @@ module.exports = {
     alias: {
       '@app': path.resolve(__dirname, 'src/app'),
       '@products': path.resolve(__dirname, 'src/products'),
+      '@assets': path.resolve(__dirname, 'assets'),
     },
   },
   plugins,

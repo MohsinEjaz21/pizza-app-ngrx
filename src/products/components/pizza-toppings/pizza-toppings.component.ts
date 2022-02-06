@@ -1,8 +1,5 @@
 import {
-  Component,
-  Input,
-  forwardRef,
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, Component, forwardRef, Input
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Topping } from '../../models/topping.model';
@@ -25,7 +22,7 @@ const PIZZA_TOPPINGS_ACCESSOR = {
         *ngFor="let topping of toppings;"
         (click)="selectTopping(topping)"
         [class.active]="existsInToppings(topping)">
-        <img src="/assets/img/toppings/singles/{{ topping.name }}.svg">
+        <img [attr.src]="'/assets/img/toppings/singles/'+topping.name.svg">
         {{ topping.name }}
       </div>
     </div>

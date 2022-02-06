@@ -15,7 +15,10 @@ export const getLoadedToppings = createSelector(getToppingsState, (state: Toppin
 // toppings > loading
 export const getLoadingToppings = createSelector(getToppingsState, (state: ToppingState) => state.loading)
 
+// toppings > selectedToppings
+export const getSelectedToppings = createSelector(getToppingsState, (state: ToppingState) => state.selectedToppings)
+
 // Map entities to Array
 export const getAllToppings = createSelector(getToppingEntities, (entities) => {
-  Object.keys(entities).map(id => entities[parseInt(id, 10)]);
+  return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
 })
