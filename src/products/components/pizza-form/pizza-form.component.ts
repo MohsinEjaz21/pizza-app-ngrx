@@ -1,28 +1,20 @@
 import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  OnChanges,
-  SimpleChanges,
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges
 } from '@angular/core';
 import {
-  FormControl,
-  FormGroup,
-  FormArray,
-  FormBuilder,
-  Validators,
+  FormBuilder, FormControl,
+  FormGroup, Validators
 } from '@angular/forms';
-
 import { map } from 'rxjs/operators';
-
 import { Pizza } from '../../models/pizza.model';
 import { Topping } from '../../models/topping.model';
+
+
 
 @Component({
   selector: 'pizza-form',
   styleUrls: ['pizza-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="pizza-form">
       <form [formGroup]="form">
@@ -102,7 +94,7 @@ export class PizzaFormComponent implements OnChanges {
     toppings: [[]],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   get nameControl() {
     return this.form.get('name') as FormControl;

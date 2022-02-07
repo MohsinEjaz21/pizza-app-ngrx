@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '@app/containers/app/app.component';
-import * as fromRouterStore from '@app/store';
+import * as fromAppStore from '@app/store';
 import { CustomSerializer } from '@app/store';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -36,8 +36,8 @@ export const ROUTES: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
-    StoreModule.forRoot(fromRouterStore.reducers, { metaReducers }),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot(fromAppStore.reducers, { metaReducers }),
+    EffectsModule.forRoot(fromAppStore.effects),
     StoreRouterConnectingModule,
     environment.development ? StoreDevtoolsModule.instrument() : [],
   ],

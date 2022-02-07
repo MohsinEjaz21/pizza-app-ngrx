@@ -92,5 +92,5 @@ further about to dive deeper or understand in more detail what they are:
 >git push -u origin main<br/>
 
 >git add .
->git commit -m "first commit"
+>git commit -m "Observables and Change Detection  > complete the pizza app"
 >git push -u origin main

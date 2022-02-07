@@ -9,9 +9,11 @@ import { StoreModule } from '@ngrx/store';
 import * as fromComponents from '@products/components';
 // containers
 import * as fromContainers from '@products/containers';
+import * as fromGaurds from '@products/gaurds';
 // services
 import * as fromServices from '@products/services';
 import * as fromStore from '@products/store';
+
 
 
 
@@ -20,13 +22,16 @@ export const ROUTES: Routes = [
   {
     path: '',
     component: fromContainers.ProductsComponent,
+    canActivate: [fromGaurds.PizzasGaurd]
   },
   {
     path: 'new',
+    canActivate: [fromGaurds.PizzasGaurd, fromGaurds.ToppingsGaurd],
     component: fromContainers.ProductItemComponent,
   },
   {
     path: ':pizzaId',
+    canActivate: [fromGaurds.PizzaExistsGaurds, fromGaurds.ToppingsGaurd],
     component: fromContainers.ProductItemComponent,
   }
 ];
@@ -40,7 +45,7 @@ export const ROUTES: Routes = [
     EffectsModule.forFeature(fromStore.effects),
     RouterModule.forChild(ROUTES),
   ],
-  providers: [...fromServices.services],
+  providers: [...fromServices.services, fromGaurds.gaurds],
   declarations: [...fromContainers.containers, ...fromComponents.components],
   exports: [...fromContainers.containers, ...fromComponents.components],
 })

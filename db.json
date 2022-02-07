@@ -81,16 +81,6 @@
       "id": 1
     },
     {
-      "name": "Plain Ol' Pepperoni",
-      "toppings": [
-        {
-          "id": 10,
-          "name": "pepperoni"
-        }
-      ],
-      "id": 3
-    },
-    {
       "name": "Papponi",
       "toppings": [
         {
@@ -175,22 +165,30 @@
       "id": 6
     },
     {
-      "name": "New Pizza 🌸",
+      "name": "Pizza tandori",
       "toppings": [
         {
-          "id": 2,
-          "name": "bacon"
+          "id": 1,
+          "name": "anchovy"
         },
         {
-          "id": 10,
-          "name": "pepperoni"
+          "id": 6,
+          "name": "mushroom"
         },
         {
           "id": 7,
           "name": "olive"
+        },
+        {
+          "id": 11,
+          "name": "sweetcorn"
+        },
+        {
+          "id": 10,
+          "name": "pepperoni"
         }
       ],
-      "id": 8
+      "id": 9
     }
   ]
 }

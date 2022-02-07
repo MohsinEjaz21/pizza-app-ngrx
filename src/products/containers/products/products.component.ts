@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Pizza } from '@products/models/pizza.model';
 import * as fromStore from '@products/store';
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'products',
   styleUrls: ['products.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
  
     <div class="products">
@@ -37,7 +38,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.pizzas$ = this.store.select<Pizza[]>(fromStore.getAllPizzas)
-    this.store.dispatch(new fromStore.LoadPizzas())
-    this.store.dispatch(new fromStore.LoadToppings())
+    // this.store.dispatch(new fromStore.LoadPizzas())
+    // this.store.dispatch(new fromStore.LoadToppings())
   }
 }

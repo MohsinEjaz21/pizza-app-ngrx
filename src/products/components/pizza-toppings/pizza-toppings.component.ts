@@ -22,7 +22,7 @@ const PIZZA_TOPPINGS_ACCESSOR = {
         *ngFor="let topping of toppings;"
         (click)="selectTopping(topping)"
         [class.active]="existsInToppings(topping)">
-        <img [attr.src]="'/assets/img/toppings/singles/'+topping.name.svg">
+        <img [attr.src]="'/assets/img/toppings/singles/'+topping.name +'.svg'">
         {{ topping.name }}
       </div>
     </div>
