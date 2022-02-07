@@ -40,6 +40,27 @@ export function reducer(state = initialState, action: any): PizzaState {
         loading: false
       }
     }
+    case fromPizza.UPDATE_PIZZAS_SUCCESS:
+    case fromPizza.CREATE_PIZZAS_SUCCESS: {
+      const pizza = action.payload;
+      const entities = {
+        ...state.entities,
+        [pizza.id]: pizza
+      }
+      return {
+        ...state,
+        entities
+      }
+    }
+
+    case fromPizza.REMOVE_PIZZAS_SUCCESS: {
+      const pizza = action.payload
+      const { [pizza.id]: removed, ...entities } = state.entities
+      return {
+        ...state,
+        entities
+      }
+    }
 
     default: {
       return { ...state }

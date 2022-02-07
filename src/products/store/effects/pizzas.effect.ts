@@ -18,4 +18,45 @@ export class PizzasEffects {
         catchError(error => of(new pizzasAction.LoadPizzasFail(error)))
       )
     }));
+
+  @Effect()
+  createPizza$ = this.actions$
+    .ofType(pizzasAction.CREATE_PIZZAS)
+    .pipe(
+      map((action: pizzasAction.CreatePizza) => action.payload),
+      switchMap(pizza => {
+        return this.pizzaService.createPizza(pizza).pipe(
+          map(pizza => new pizzasAction.CreatePizzaSuccess(pizza)),
+          catchError(err => of(new pizzasAction.CreatePizzaFail(err)))
+        )
+      })
+    )
+
+  @Effect()
+  updatePizza$ = this.actions$
+    .ofType(pizzasAction.UPDATE_PIZZAS)
+    .pipe(
+      map((action: pizzasAction.UpdatePizza) => action.payload),
+      switchMap(pizza => {
+        return this.pizzaService.updatePizza(pizza).pipe(
+          map(pizza => new pizzasAction.UpdatePizza(pizza)),
+          catchError(error => of(new pizzasAction.UpdatePizzaFail(error)))
+        )
+      })
+    )
+
+  @Effect()
+  removePizza$ = this.actions$
+    .ofType(pizzasAction.REMOVE_PIZZAS)
+    .pipe(
+      map((action: pizzasAction.RemovePizza) => action.payload),
+      switchMap(pizza => {
+        return this.pizzaService.removePizza(pizza).pipe(
+          // nothing return after deletion
+          map(() => new pizzasAction.RemovePizzaSuccess(pizza)),
+          catchError(error => of(new pizzasAction.RemovePizzaFail(error)))
+        )
+      })
+    )
+
 }
